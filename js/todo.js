@@ -101,3 +101,36 @@ input.addEventListener('keypress', function (event) {
 function addTodo(id, todoText, completed) {
 
 }
+
+
+$('#logout_button').on('click', function(){
+
+  json_to_send = {
+
+  };
+
+  json_to_send = JSON.stringify(json_to_send)
+  console.log(json_to_send)
+  $.ajax({
+    //url: 'http://localhost:3000/login',
+    url: 'https://examen-final2019.herokuapp.com/logout',
+
+    // url: 'https://tuapp.herokuapp.com/users/login',
+    headers: {
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer ' + token
+    },
+    method: 'POST',
+    dataType: 'json',
+    data: json_to_send,
+    success: function(data){
+      // guardar token en localstorage o cookie
+      // localStorage.setItem('token', data.token)
+      window.location = './index.html'
+    },
+    error: function(error_msg) {
+      window.location = './index.html'
+      //alert((error_msg["responseText"]))
+    }
+  })
+})

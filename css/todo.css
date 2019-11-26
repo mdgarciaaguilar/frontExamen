@@ -17,7 +17,7 @@ ul.navbar {
   background-color: rgba(232,230,230,0.18);
 }
 
-li.navbar-elem {
+button.navbar-elem {
   float: right;
 }
 
