@@ -21,7 +21,7 @@ div {
 }
 
 #container-form {
-  width: 400px;
+  width: 800px;
   background: #ffffff;
   margin: auto;
   border-radius: 2  px;
@@ -74,9 +74,7 @@ button {
   height: 50px;
   margin: 10px 0;
   background: #a64bf4;
-  background: -webkit-linear-gradient(left, #21d4fd, #b721ff);;
   border: none;
-  border-radius: 25px;
 }
 
 
