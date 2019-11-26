@@ -1,21 +1,19 @@
 
-
-
 $('#signup_button').on('click', function(){
-
+  console.log('Hola maestra');
+  // cargar los valores de password, email, name, age
   json_to_send = {
-    "categoria" : $('#categoria').val(),
-    "nombre": $('#nombre').val(),
-    "descripcion": $('#descripcion').val(),
-    "presentacion": $('#presentacion').val(),
-    "link": $('#link').val()
+    "password" : $('#password').val(),
+    "email": $('#email').val(),
+    "name": $('#name').val(),
+    "age": $('#age').val()
   };
 
   json_to_send = JSON.stringify(json_to_send);
 
   $.ajax({
-    url: 'https://elvina-pasteleria-back.herokuapp.com/products',
-    //url: 'http://localhost:3000/products',
+    //url: 'http://localhost:3000/users',
+    url: 'https://examen-final2019.herokuapp.com/users',
 
     headers: {
         'Content-Type':'application/json'
@@ -24,9 +22,9 @@ $('#signup_button').on('click', function(){
     dataType: 'json',
     data: json_to_send,
     success: function(data){
-      alert("Producto creado con exito");
+      alert("Usuario creado con exito");
       console.log('success: '+ data);
-      window.location = './signup.html'
+      window.location = './index.html'
     },
     error: function(error_msg) {
       alert((error_msg['responseText']));
